@@ -1,5 +1,69 @@
+@import 'sass/variables';
 *,html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: $light-color;
+}
+.navbar{
+    background-color: $dark-color;
+    position: fixed;
+    width: 100%;
+    .menu-main{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        .navbar-logo{
+            margin-right: auto;
+            font-size: 2rem;
+        }
+        .menu-icon{
+            .line{
+                background-color: $light-color;
+                width: 25px;
+                height: 2px;
+                display: block;
+                margin: 5px 0;
+                transition: 0.2s;
+            }
+            &.exit{
+                .line{
+                    &:first-child{
+                        transform: rotate(45deg) translate(5px,0px);
+                    }
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:last-child{
+                        transform: rotate(-45deg) translate(5px,0px);
+                    }
+                }
+            }
+            
+        }
+        .menu-list{
+            list-style: none;
+            flex: 0 0 100%;
+            display: none;
+            &.active{
+                height: 100vh;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+            }
+            .menu-item{
+                flex: 0 0 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+        }
+    }
+}
+section{
+    height: 100vh;
+    background-color: $primary-color;
 }
